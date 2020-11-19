@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class ChatWindow extends Component {
-	render() {
-		return (
-			<div id="chat-window">
-                <p>crickets..</p>
-			</div>
-		);
-	}
+export default function ChatWindow(props) {
+	const conversationMapped = props.conversation.map((el, i) => {
+		return <h4 key={i}>{el}</h4>
+	});
+
+	return (
+		<div
+			id="chat-window">
+			{conversationMapped}
+		</div>
+	);
 }
